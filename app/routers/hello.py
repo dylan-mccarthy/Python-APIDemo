@@ -22,3 +22,11 @@ def set_username(userDetails: UserDetails):
     global username
     username = userDetails.username
     return {"message": f"Username set to {userDetails.username}"}
+
+@router.get("/goodbye")
+def say_goodbye():
+    return {"message": "Goodbye!"}
+
+@router.get("/goodbye/{name}")
+def say_goodbye_name(name: str):
+    return {"message": f"Goodbye {name}"}
